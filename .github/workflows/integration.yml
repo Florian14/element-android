@@ -69,8 +69,9 @@ jobs:
           python3 -m venv .synapse
           source .synapse/bin/activate
           pip install synapse matrix-synapse
-          curl -sL https://raw.githubusercontent.com/matrix-org/synapse/develop/demo/start.sh --no-rate-limit \
-            | sed s/127.0.0.1/0.0.0.0/g | bash
+          curl https://raw.githubusercontent.com/matrix-org/synapse/develop/demo/start.sh -o start.sh
+          chmod 777 start.sh
+          ./start.sh --no-rate-limit
       - name: Run integration tests on API ${{ matrix.api-level }}
         uses: reactivecircus/android-emulator-runner@v2
         with:
@@ -83,4 +84,5 @@ jobs:
           force-avd-creation: false
           emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           emulator-build: 7425822
-          script: ./gradlew $CI_GRADLE_ARG_PROPERTIES -PallWarningsAsErrors=false connectedCheck --stacktrace
+          #          script: ./gradlew $CI_GRADLE_ARG_PROPERTIES -PallWarningsAsErrors=false connectedCheck --stacktrace
+          script: ./gradlew $CI_GRADLE_ARG_PROPERTIES -Pandroid.testInstrumentationRunnerArguments.class=org.matrix.android.sdk.session.room.timeline.ChunkEntityTest matrix-sdk-android:connectedAndroidTest --info
