@@ -84,7 +84,7 @@ jobs:
           force-avd-creation: false
           emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           emulator-build: 7425822
-          script: ./integration_tests_script_github.sh
+          script: ./integration_tests_script.sh
          # script: ./gradlew $CI_GRADLE_ARG_PROPERTIES matrix-sdk-android:connectedAndroidTest --info
           #          script: ./gradlew $CI_GRADLE_ARG_PROPERTIES -PallWarningsAsErrors=false connectedCheck --stacktrace
 #          script: ./gradlew $CI_GRADLE_ARG_PROPERTIES -Pandroid.testInstrumentationRunnerArguments.class=org.matrix.android.sdk.session.room.timeline.ChunkEntityTest matrix-sdk-android:connectedAndroidTest --info
