@@ -8,8 +8,8 @@ jobs:
   Move_Unabeled_Issue_On_Project_Board:
     name: Move no longer X-Needs-Info issues to Triaged
     runs-on: ubuntu-latest
+    # Skip in forks
     if: >
-      # Skip in forks
       github.repository == 'vector-im/element-android' &&
       !contains(github.event.issue.labels.*.name, 'X-Needs-Info')
     env:

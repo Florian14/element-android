@@ -21,8 +21,8 @@ jobs:
   add_priority_design_issues_to_project:
     name: P1 X-Needs-Design to Design project board
     runs-on: ubuntu-latest
+    # Skip in forks
     if: >
-      # Skip in forks
       github.repository == 'vector-im/element-android' &&
       contains(github.event.issue.labels.*.name, 'X-Needs-Design') &&
       (contains(github.event.issue.labels.*.name, 'S-Critical') &&
@@ -54,8 +54,8 @@ jobs:
   #  delight_issues_to_board:
   #    name: Spaces issues to new Delight project board
   #    runs-on: ubuntu-latest
+  #    # Skip in forks
   #    if: >
-  #      # Skip in forks
   #      github.repository == 'vector-im/element-android' &&
   #      contains(github.event.issue.labels.*.name, 'A-Spaces') ||
   #      contains(github.event.issue.labels.*.name, 'A-Space-Settings') ||
@@ -81,8 +81,8 @@ jobs:
   move_voice-message_issues:
     name: A-Voice Messages to voice message board
     runs-on: ubuntu-latest
+    # Skip in forks
     if: >
-      # Skip in forks
       github.repository == 'vector-im/element-android' &&
       contains(github.event.issue.labels.*.name, 'A-Voice Messages')
     steps:
@@ -106,8 +106,8 @@ jobs:
   move_threads_issues:
     name: A-Threads to Thread board
     runs-on: ubuntu-latest
+    # Skip in forks
     if: >
-      # Skip in forks
       github.repository == 'vector-im/element-android' &&
       contains(github.event.issue.labels.*.name, 'A-Threads')
     steps:
@@ -131,8 +131,8 @@ jobs:
   move_message_bubbles_issues:
     name: A-Message-Bubbles to Message bubbles board
     runs-on: ubuntu-latest
+    # Skip in forks
     if: >
-      # Skip in forks
       github.repository == 'vector-im/element-android' &&
       contains(github.event.issue.labels.*.name, 'A-Message-Bubbles')
     steps:

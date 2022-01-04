@@ -7,8 +7,8 @@ on:
 jobs:
   p1_issues_to_team_workboard:
     runs-on: ubuntu-latest
+    # Skip in forks
     if: >
-      # Skip in forks
       github.repository == 'vector-im/element-android' &&
       (!contains(github.event.issue.labels.*.name, 'A-E2EE') &&
         !contains(github.event.issue.labels.*.name, 'A-E2EE-Cross-Signing') &&
@@ -35,8 +35,8 @@ jobs:
 
   P1_issues_to_crypto_team_workboard:
     runs-on: ubuntu-latest
+    # Skip in forks
     if: >
-      # Skip in forks
       github.repository == 'vector-im/element-android' &&
       (contains(github.event.issue.labels.*.name, 'A-E2EE') ||
         contains(github.event.issue.labels.*.name, 'A-E2EE-Cross-Signing') ||
