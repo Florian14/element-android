@@ -9,8 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     # Skip in forks
     if: >
-      github.repository == 'vector-im/element-android' &&
-      (!contains(github.event.issue.labels.*.name, 'A-E2EE') &&
+      github.repository == 'Florian14/element-android' &&
+      ( !contains(github.event.issue.labels.*.name, 'A-E2EE') &&
         !contains(github.event.issue.labels.*.name, 'A-E2EE-Cross-Signing') &&
         !contains(github.event.issue.labels.*.name, 'A-E2EE-Dehydration') &&
         !contains(github.event.issue.labels.*.name, 'A-E2EE-Key-Backup') &&
@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     # Skip in forks
     if: >
-      github.repository == 'vector-im/element-android' &&
+      github.repository == 'Florian14/element-android' &&
       (contains(github.event.issue.labels.*.name, 'A-E2EE') ||
         contains(github.event.issue.labels.*.name, 'A-E2EE-Cross-Signing') ||
         contains(github.event.issue.labels.*.name, 'A-E2EE-Dehydration') ||

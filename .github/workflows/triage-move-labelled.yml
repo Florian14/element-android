@@ -9,12 +9,12 @@ jobs:
     name: X-Needs-Info issues to Need info column on triage board
     runs-on: ubuntu-latest
     # Skip in forks
-    if: github.repository == 'vector-im/element-android'
+    if: github.repository == 'Florian14/element-android'
     steps:
       - uses: konradpabjan/move-labeled-or-milestoned-issue@219d384e03fa4b6460cd24f9f37d19eb033a4338
         with:
           action-token: "${{ secrets.ELEMENT_BOT_TOKEN }}"
-          project-url: "https://github.com/vector-im/element-android/projects/4"
+          project-url: "https://github.com/Florian14/element-android/projects/1"
           column-name: "Need info"
           label-name: "X-Needs-Info"
 
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     # Skip in forks
     if: >
-      github.repository == 'vector-im/element-android' &&
+      github.repository == 'Florian14/element-android' &&
       contains(github.event.issue.labels.*.name, 'X-Needs-Design') &&
       (contains(github.event.issue.labels.*.name, 'S-Critical') &&
         (contains(github.event.issue.labels.*.name, 'O-Frequent') ||
@@ -56,7 +56,7 @@ jobs:
   #    runs-on: ubuntu-latest
   #    # Skip in forks
   #    if: >
-  #      github.repository == 'vector-im/element-android' &&
+  #      github.repository == 'Florian14/element-android' &&
   #      contains(github.event.issue.labels.*.name, 'A-Spaces') ||
   #      contains(github.event.issue.labels.*.name, 'A-Space-Settings') ||
   #      contains(github.event.issue.labels.*.name, 'A-Subspaces')
@@ -83,7 +83,7 @@ jobs:
     runs-on: ubuntu-latest
     # Skip in forks
     if: >
-      github.repository == 'vector-im/element-android' &&
+      github.repository == 'Florian14/element-android' &&
       contains(github.event.issue.labels.*.name, 'A-Voice Messages')
     steps:
       - uses: octokit/graphql-action@v2.x
@@ -108,7 +108,7 @@ jobs:
     runs-on: ubuntu-latest
     # Skip in forks
     if: >
-      github.repository == 'vector-im/element-android' &&
+      github.repository == 'Florian14/element-android' &&
       contains(github.event.issue.labels.*.name, 'A-Threads')
     steps:
       - uses: octokit/graphql-action@v2.x
@@ -133,7 +133,7 @@ jobs:
     runs-on: ubuntu-latest
     # Skip in forks
     if: >
-      github.repository == 'vector-im/element-android' &&
+      github.repository == 'Florian14/element-android' &&
       contains(github.event.issue.labels.*.name, 'A-Message-Bubbles')
     steps:
       - uses: octokit/graphql-action@v2.x
